@@ -4,6 +4,7 @@ from discord.ext import commands
 import logging
 from dotenv import load_dotenv
 import os
+import time
 from keep_alive import keep_alive
 NEW_NICKNAME = Birdies.generate_bird_name()
 print(NEW_NICKNAME)
@@ -42,3 +43,6 @@ async def on_member_join(member):
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 
 
+while True:
+    keep_alive()
+    time.sleep(5)
